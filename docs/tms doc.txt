@@ -1,0 +1,1087 @@
+﻿ 
+  
+CHINMAYA COLLEGE OF ARTS, COMMERCE AND SCIENCE  
+Layam Road, Tripunithura - 682301  
+(Affiliated to Mahatma Gandhi University, Kottayam)  
+  
+  
+BACHELOR OF COMPUTER APPLICATIONS  
+MINI PROJECT  
+                                                    ON  
+            TOURISM MANAGEMENT SYSTEM
+  
+ 
+ 
+       Submitted By,                                          
+  ALKA RAJAN
+      Register no: 230021079871 
+  
+  
+  
+  
+  
+  
+        CHINMAYA COLLEGE OF ARTS, COMMERCE AND SCIENCE  
+Layam Road, Tripunithura - 682301  
+     (Affiliated to Mahatma Gandhi University, Kottayam)  
+  
+CERTIFICATE  
+    This is to certify that the Mini Project Report entitled  
+TOURISM MANAGEMENT SYSTEM
+ 	 has been submitted by, 
+ 
+ALKA RAJAN
+Register no:230021079871  
+               in partial fulfilment of the requirements for the award of the degree  
+BACHELOR OF COMPUTER APPLICATIONS  MAHATMA GANDHI UNIVERSITY  
+ 
+During the academic year 2024-2025 
+Submitted for the University Examination held on .............  
+ 
+ 	Principal  	  	  	  	  	  	  	                    Head of the Department  
+  
+ 	External Examiner  	  	  	  	  	  	  	           Project Guide  
+  
+  
+ 
+ACKNOWLEDGEMENT 
+ 
+  
+By blessing and permission of Almighty God, I was able to complete this work successfully.  My sincere thanks to  our  principal in charge Ms. Rosy  joice Lopez for their overwhelming and moral support extended towards us. 
+I would like to thank our head of the department Mrs. Nisha Sanjay for her constant encouragement and support for the completion of our project .I would like to express gratitude to Mrs. Remilda Rajan (Project Guide), for her valuable guidance and support. I would also like to express my sincere thanks to all my teachers, Mrs. Sharmila Francis, Mrs. Ranimol V G, Mrs. Andal V and Mr. Vishnu Mohanan  for their timely assistance and advice offered to us to make this mini project a success. 
+Finally, I thank my parents for their boundless support and for making our lives so easy and for helping to tackle all those difficulties in life. Sincere thanks to all other people who supported me and contributed towards the successful completion of my project. 
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DECLARATION  
+  
+ I ALKA RAJAN, hereby declare that the Mini Project entitled TOURISM MANAGEMENT SYSTEM submitted to Mahatma Gandhi University , Kottayam in  partial fulfilment of the requirements for the Bachelor's degree in Computer Applications is  a record of original work done by me during the period of study at Chinmaya College  Of Arts, Commerce And Science Tripunithura under the supervision and guidance of Mrs. Remilda Rajan (Project Guide), department of BCA and that this project work has not formed the basis for the award of any diploma/associates-ship/fellowship or similar title to  any candidate of any university.  
+  
+  
+Place: Tripunithura  	  	  	  	  	  	  	 ALKA RAJAN
+Date:  	  	  	  	  	  	                         Register No: 230021079871 
+
+ 
+SYNOPSIS 
+                              Tourism Management System (PHP-Based)
+
+• Existing System 
+The current (manual or semi-automated) tourism management system often involves:
+Paper-based or spreadsheet tracking of bookings.
+Manual communication with customers via phone/email.
+Lack of real-time updates on tour availability or changes.
+Poor integration of services like payments and customer feedback.
+Risk of human error and data inconsistency.
+• Proposed System 
+The PHP-based Tourism Management System will:
+Be a web-based platform for tourists and administrators.
+Allow users to register, browse tour packages, make bookings, and submit queries online.
+Enable admins to manage packages, view bookings, handle payments, and respond to customer inquiries.
+Include modules such as:
+User registration and login
+Tour package listing and details
+Booking system
+Payment integration (optional)
+Admin dashboard
+Feedback and support
+Technology Stack:
+Frontend: HTML, CSS, JavaScript
+Backend: PHP
+Database: MySQL
+Server: Apache (XAMPP/WAMP/LAMP)
+• Expected Outcome
+
+The new system will:
+Automate the booking and management process.
+Provide a user-friendly interface for both customers and administrators.
+Ensure real-time data access and better customer engagement.
+Reduce operational errors and manual workload.
+Improve overall efficiency, transparency, and satisfaction
+
+
+
+
+
+                              TABLE OF CONTENTS 
+1.Introduction  	 	 	 	 	 	 	 	 	 	   	    01 
+1. 1.Project Overview  	 	 	 	 	 	 	 	 	    01 
+2. System Analysis  	  	  	  	  	  	  	 	 	 	 	    01 
+2.1. Problem Analysis     	  	  	  	  	 	 	 	  	    02 
+2.1.1. Existing System      	  	  	  	 	 	 	  	    02 
+2.1.2. Proposed System     	  	  	  	 	 	 	    	    02 
+2.1.3. Feasibility Study     	  	  	  	 	 	 	 	    02 
+2.1.3.1. Economic Feasibility  	  	  	                                    	   03 
+2.1.3.2. Technical Feasibility   	 	 	 	 	 	 	    03 
+2.1.3.3. Behavioural Feasibility   	  	  	 	 	 	 	    03 
+2.2. Requirement Specification  	  	  	  	  	 	 	 	    04  
+2.2.1. Software Requirement Specification   	  	 	 	 	 	    04 
+2.3. Hardware and Software Selection and Justification  	 	 	 	                05 
+2.3.1. Hardware Specification  	 	 	 	 	 	                            05  
+2.3.2. Software Selection and justification  	 	 	 	 	 	    06 
+2.4. Use Case Diagram    	  	  	  	  	 	 	 	                10 
+2.5. Data Flow Diagram  	  	  	  	  	  	 	 	 	    11 
+2.6. Entity Relationship Diagram  	  	  	  	  	 	 	                15 
+3. System Design   	  	  	  	  	  	                                                                16 
+3.1. Structured Design Methodologies    	  	  	 	 	                            16 
+3.2. User Interface Design  	  	  	  	  	                                                    16 
+3.3. Database Design   	  	  	  	  	  	 	 	 	                17 
+3.3.1. Data and Integrity Constraints   	  	  	 	 17  
+3.4. Output Design  	  	  	  	  	  	  	 18 
+3.5. Table Design  	  	  	  	  	  	  	 19  
+4. Coding  	  	  	  	  	  	  	  	 	                                         23 
+4.1. Program Code Preparation    	  	  	  	 	23 	 
+4.2. implementation of security  	24 
+ 	4.2.1.data security 	 	 	24 
+ 	4.2.2. users and access rights  	 	24 
+5. System Testing  	  	  	  	  	  	  	25 
+5.1. Unit Testing    	  	  	  	  	  	 	27 
+5.2. Integration Testing    	  	  	  	  	 	27 
+5.3. User Acceptance Testing  	  	  	  	  	 	28 
+5.4. Test Case Design    	 	28 
+5.5. Test Report and Debugging  	 	29 
+6. System Implementation and Maintenance                                                                                          30 
+7. Scope of the Project   	  	  	  	30 
+8. Future Enhancements   	  	  	  	31 
+9. Conclusion    	  	  	  	  	                                                                            31 
+10. Bibliography  	 	 	 	 	 	 	 	 	                            31 
+ 	Appendix I - Coding    	  	  	  	                                                                32 	 
+ 	Appendix II - Forms and screenshots   	                                                                            52 	 
+ 	 	   	  	  	  	  
+   	  	  	  	  
+   	  	  
+ 	 
+ 	  	  	  	 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 	 	 	 	 	 
+ 
+ 
+ 	 	 	 	 	 
+ 
+ 
+INTRODUCTION 
+
+ 
+1.INTRODUCTION 
+1.1 PROJECT OVERVIEW 
+The Tourism Management System mini project is designed to simplify and digitalize the process of managing tours and travel services. It allows tourists to browse destinations, select tour packages, book tickets, and reserve hotels in a convenient way. At the same time, it helps travel agencies manage customer details, bookings, payments, and package information more efficiently. The system reduces manual work, saves time, and provides accurate information to both customers and agencies. Being a mini project, it demonstrates the core features of a real-world tourism application in a simple and user-friendly manner.
+2. SYSTEM ANALYSIS 
+
+System analysis refers to the process of examining a situation with the intent of improving it through better process and methods. System analysis is, therefore, the process of gathering and interpreting facts, diagnosing problems and using the information to recommend changes in the system, in other words it means a detailed explanation of description. Before computerizing a system under consideration, it must be analysed. We need to study how it functions currently, what are problems and what are the requirements that the proposed software should meet.
+i. System and software requirements analysis
+ii. Design and implementation of software
+iii. Ensuring, verifying and maintaining software integrity
+The Tourism Management System provides a user-friendly interface that can be operated by anyone with little technical knowledge. It stores information about tourist destinations, travel packages, bookings, customer details, and guides in a database which can be accessed by the administrator and customers. It should maintain a well-organized database for storing information regarding tourism services, hotel reservations, and travel itineraries. This helps to eliminate the storage of invalid data and ensures smooth management of tourism activities.
+ 2.1 PROBLEM ANALYSIS 
+Managing tourism activities manually creates many difficulties. Customer details, bookings, and tour packages are often recorded on paper or spreadsheets, which leads to errors and confusion. Double bookings, missing information, and poor coordination between hotels, transport, and travel agents are common issues. Tourists also find it hard to get updated information quickly, which reduces their satisfaction. Overall, the manual process is slow, inefficient, and not reliable. The Tourism Management System is needed to solve these problems by keeping everything organized, improving booking accuracy, and making information easily accessible for both customers and administrators.
+
+2.1.1 EXISTING SYSTEM 
+The current (manual or semi-automated) tourism management system often involves:
+Paper-based or spreadsheet tracking of bookings.
+Manual communication with customers via phone/email.
+Lack of real-time updates on tour availability or changes.
+Poor integration of services like payments and customer feedback.
+Risk of human error and data inconsistency.
+2.1.2 PROPOSED SYSTEM 
+
+The PHP-based Tourism Management System will:
+Be a web-based platform for tourists and administrators.
+Allow users to register, browse tour packages, make bookings, and submit queries online.
+Enable admins to manage packages, view bookings, handle payments, and respond to customer inquiries.
+Include modules such as:
+User registration and login
+Tour package listing and details
+Booking system
+Payment integration (optional)
+Admin dashboard
+Feedback and support
+Technology Stack:
+Frontend: HTML, CSS, JavaScript
+Backend: PHP
+Database: MySQL
+Server: Apache (XAMPP/WAMP/LAMP)
+2.1.3 FEASIBILITY STUDY 
+ Feasibility is conducted to identify the best system that meets all requirements for managing tourism management system services. It is both necessary and important to evaluate the feasibility of a project at the earliest possible time. feasibility study includes an identification description, an evaluation of proposed system and selection of the best system for the job. During the system is to be carried out. this is to ensure that the proposed system is not A burden to the shop. The feasibility study should be relatively cheap and quick. the results should inform the decision of whether to go ahead with a more detailed analysis, some understanding of the major requirements for the system is essential. 
+Four key considerations involved in the feasibility analysis are  
+i. Economic feasibility 
+ii. Technical feasibility 
+iii. Behavioural feasibility 
+2.1.3.1 ECONOMIC FEASIBILITY  
+
+The Tourism Management System is economically feasible because the benefits it provides are much greater than the costs involved in creating and maintaining it. The main expenses include system development, setup, training of staff, and regular maintenance. However, these are outweighed by the advantages, such as reduced paperwork, fewer booking errors, faster operations, and better handling of customer details. By improving efficiency, the system helps attract more tourists, increases customer satisfaction, and boosts overall revenue. In the long run, it saves both time and money for the tourism business, making it a cost-effective investment.
+2.1.3.2 TECHNICAL FEASIBILITY 
+The system is technically feasible because the required technologies, such as databases, web applications, and servers, are already available and widely used. The Tourism Management System does not demand high-end or costly hardware, meaning it can be easily run on the resources already present in most organizations. Modern development tools and platforms make it easier to design and implement the system in a short time. Staff members can be trained quickly since the system is simple and user-friendly. Therefore, from a technical point of view, there are no major obstacles to its development or use.
+ 2.1.3.3 BEHAVIOURAL FEASIBILITY  
+The system is behaviourally feasible because it is designed with the end-users in mind. Employees of the tourism agency will find it easy to use, which reduces their workload and makes day-to-day tasks more efficient. Customers will benefit from fast booking processes, accurate information, and better service, which will make them more willing to use the system. Since the system improves overall satisfaction for both staff and customers, it is likely to be accepted and used without resistance. This ensures that the Tourism Management System will succeed in real-world usage.
+2.2 REQUIREMENT SPECIFICATION 
+ Requirement analysis involves studying the current tourism management process to find out how it works and where improvements could be made. A clear idea about the existing system is a must for making improvements where it is required. Proper planning and collection of data serves the purpose. The requirement engineering process should normally involve writing requirements definition and then expanding this into a requirement specification. The requirement definition is targeted at a managerial level and requirements specification at the technical level. The software design is based directly on the requirements specification. System analysis includes two main procedures. They are: - 
+1. Preliminary analysis  
+2. Detailed analysis 
+ The preliminary analysis stage begins when someone encounters a problem or limitation in an existing system, desires a modification to the existing system. The modification may be either change in existing system or proposing an entire new system. Detailed analysis expands the preliminary analysis to include a complete analysis of all possible alternative solutions to the problem and a complete explanation of what appears to be the most practical solution 
+2.2.1 SOFTWARE REQUIREMENT SPECIFICATION  
+
+The Software Requirements Specification (SRS) defines what the Tourism Management System should do and the constraints under which it must operate. It acts as a guide for developers and ensures that the system meets the needs of both administrators and customers.
+1. Functional Requirements
+These describe the core functions that the system must perform:
+The system should allow customers to view tourism packages, destinations, and pricing.
+Customers should be able to register, log in, and manage their profiles.
+Online booking and cancellation of tours, hotels, and travel services should be supported.
+The system should generate invoices and payment receipts.
+Administrators should be able to add, update, or delete tourism packages and offers.
+The system should maintain records of customers, bookings, and payments.
+Reports (sales, customer history, package popularity) should be generated for management.
+2. Non-Functional Requirements
+These describe the quality and constraints of the system:
+Usability: The system should have a simple and user-friendly interface for both staff and customers.
+Reliability: Data should be stored safely and be available whenever needed.
+Performance: The system should handle multiple users at the same time without slowing down.
+Security: Customer data, booking details, and payment information must be protected.
+Scalability: The system should allow the addition of new destinations, packages, or features without major changes.
+Availability: The system should be available online 24/7 for customer access.
+2.3 HARDWARE AND SOFTWARE SELECTION AND JUSTIFICATION 
+2.3.1.HARDWARE SPECIFICATION  
+The selection of hardware is very important in the existence and proper working of any software. When selecting hardware, the size and capacity requirements are also important. 
+ Below are some of the hardware that is required by the system.  
+Processor: Intel core i3 and above  
+RAM: Minimum 4 GB RAM  
+Hard Disk Space: 100 GB 
+ Input Devices : Mouse, Keyboard  
+Output Devices: Monitor, audio device 
+2.3.2. SOFTWARE SELECTION AND JUSTIFICATION  
+We require different software to make the application which is in making to work efficiently. It is very important to select the appropriate software so that software works properly. 
+ Below are the software requirements :- 
+ Operating software: Windows 7 or higher versions  
+Front End : HTML, JavaScript, CSS  
+Back End : PHP, MySQL  
+Web Browser : Internet Explorer/Google Chrome/Firefox  
+Web Server : Wamp Server 
+ WINDOWS 10
+ Windows 10 is a major release of the Windows NT operating system developed by Microsoft. It is the successor of Windows 8.1, which was released nearly two years earlier , an itself was released to manufacturing on July 15, 2015, and broadly released for the general public on July 29, 2015. Windows 10 was made available for download via MSDN and TechNet, as a free upgrade for retail copies of Windows 8 and Windows 8.1 users via the Windows Store, and to Windows 7 users via Windows Update. Windows 10 receives new builds on an ongoing basis, which are available at no additional cost to users, in addition to additional test builds of Windows 10, which are available to Windows Insiders. Devices in enterprise environments can receive critical updates, such as security patches, over their tenyear lifespan of extended support. Microsoft initially aimed to have Windows 10 installed on over one billion devices within three years of its release; that goal was ultimately reached almost five years after release on March 16, 2020. By January 2018, Windows 10 surpassed Windows 7 as the most popular version of Windows worldwide. As of December 2021, it is estimated that 82% of Windows PCs, 61% of all PCs (the rest being older Windows versions and other operating systems such as macOS and Linux), and 27% of all devices (including mobile, tablet and console) are running Windows 10. On June 24, 2021, Microsoft announced Windows 10's successor, Windows 11, which was released on October 5, 2021.  
+ABOUT THE BACKEND 
+PHP  
+The PHP Hypertext Pre-processor (PHP) is a programming language that allows web developers to create dynamic content that interacts with databases. PHP is basically used for developing web-based software applications.  
+PHP started out as a small open-source project that evolved as more and more people found out how useful it was. Rasmus Lerdorf unleashed the first version of PHP way back in 1994. PHP is a MUST for students and working professionals to become a great Software Engineer specially when they are working in Web Development Domain. 
+ I will list down some of the key advantages of learning PHP:  
+i. PHP is a recursive acronym for "PHP: Hypertext Pre-processor". 
+ii. PHP is a server-side scripting language that is embedded in HTML. It is used to manage dynamic content, databases, session tracking, even build entire e-commerce sites.  
+iii. It is integrated with a number of popular databases, including MySQL, PostgreSQL, Oracle, Sybase, Informix, and Microsoft SQL Server. 
+iv. PHP is pleasingly zippy in its execution, especially when compiled as an Apache module on the Unix side. The MySQL server, once started, executes even very complex queries with huge result sets in record-setting time. 
+v. PHP supports a large number of major protocols such as POP3, IMAP, and LDAP. PHP4 added support for Java and distributed object architectures (COM and CORBA), making n-tier development a possibility for the first time.  
+vi. PHP is forgiving: PHP language tries to be as forgiving as possible. 
+ 
+CHARACTERISTICS OF PHP 
+i. 	Simplicity ii.    ii.	Efficiency 
+iii. Security 
+iv.  Flexibility  
+   v.	Familiarity 
+MySQL 
+ MYSQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", the name of co-founder Michael Wideness's daughter My, and "SQL", the abbreviation for Structured Query Language. A relational database organizes data into one or more data tables in which data may be related to each other; these relations help structure the data. SQL is a language programmers use to create, modify and extract data from the relational database, as well as control user access to the database. In addition to relational databases and SQL, an RDBMS like MySQL works with an operating system to implement a relational database in a computer's storage system, manages users, allows for network access and facilitates testing database integrity and creation of backups. MySQL is free and open-source software under the terms of the GNU General Public License, and is also available under a variety of proprietary licenses. MySQL was owned and sponsored by the Swedish company MySQL AB, which was bought by Sun Microsystems (now Oracle Corporation). In 2010, when Oracle acquired Sun, Wideness forked the open-source MySQL project to create MariaDB. MySQL has stand-alone clients that allow users to interact directly with a MySQL database using SQL, but more often, MySQL is used with other programs to implement applications that need relational database capability. MySQL is a component of the LAMP web application software stack (and others), which is an acronym for Linux, Apache, MySQL, Perl/PHP/Python. MySQL is used by many database-driven web applications, including Drupal, Joomla, phpBB, and WordPress. MySQL is also used by many popular websites, including Facebook, Flickr, Media Wiki, Twitter, and YouTube. There are, however, limits to how far performance can scale on a single server ('scaling up'), so on larger scales, multi-server MySQL ('scaling out') deployments are required to provide improved performance and reliability. A typical high-end configuration can include a powerful master database which handles data write operations and is replicated to multiple slaves that handle all read operations. The master server continually pushes binlog events to connected slaves so in the event of failure a slave can be promoted to become the new master, minimizing downtime. Further improvements in performance can be achieved by caching the results from database queries in memory using Memcached, or breaking down a database into smaller chunks called shards which can be spread across a number of distributed server clusters. 
+ 
+ABOUT THE FRONT- END  
+Hypertext Mark-up Language (HTML) 
+ It is the standard mark-up language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. Tags such as and directly introduce content into the page. Other tags such as surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags but use them to  interpret the content of the page.HTML can embed programs written in a scripting language such as JavaScript, which affects the behaviour and content of web pages. Inclusion of CSS defines the look and layout of content.  
+ 
+ 
+JavaScript 
+ It is a lightweight, interpreted, object-oriented language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well. It is a prototypebased, multi- paradigm scripting language that is dynamic, and supports object-oriented, imperative, and functional programming styles. JavaScript runs on the client side of the web, which can be used to design / program how the web pages behave on the occurrence of an event. JavaScript is an easy to learn and powerful scripting language, widely used for controlling web page behaviour. JavaScript can function as both a procedural and an object-oriented language. Objects are created programmatically in JavaScript, by attaching methods and Properties to otherwise empty objects at run time, as opposed to the syntactic class definitions common in compiled languages like C++ and Java. Once an object has been constructed it can be used as a blueprint (or prototype) for creating similar objects. 
+ Cascading Style Sheets (CSS) 
+ It is a style sheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, Math or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.  
+ 2.4 use case diagram
+ 	 
+
+
+The DFD also known as bubble chart. It is a simple graphical formalism that can be used to  represent a system in terms of the input data to the system, various processing carried out on  these data and the output data generated by the system.  
+Data flow diagram (DFD) is used to show how data flows through the system and the  processes that transform the input data into output. Data flow diagrams are a way of  expressing system requirements in a graphical manner. Four simple notations are used to  complete a DFD. The notations are given below:  
+A directed arc or an arrow is used as a Data Flow Symbol. This represents the data flow  occurring between two processes or between an external entity and a process; in direction of  Data flow Symbols are annotated with corresponding data names.  
+A function is represented using a circle. This symbol is called a process or a bubble.  
+Bubbles are annotated with the names of corresponding functions.  
+An external entity such as a user, project manager etc. is represented by a rectangle. The  
+
+
+
+
+ii. 	Customer 
+ 
+Figure 2.4. customer first level data flow diagram 
+ 
+2.6 ER DIAGRAM 
+ 
+ 
+ 
+Figure 2.5.  ER diagram 
+ 
+ 
+ 
+3. SYSTEM DESIGN  
+The most creative and challenging phase of the system development is system design, is a solution to how to approach to the creation of the proposed system. It refers to the technical specification that will be applied. It provides the understanding and procedural details necessary for implementing the system recommended in the feasibility study. Design goes through the logical and physical stages of development. At an early stage in designing a new system, the system analyst must have a clear understanding of the objectives, which the design is aiming to fulfil. The first step is to determine how the output is to be produced and in what format. Second, input data and master files (database) have to be designed to meet the requirements of the proposed output. The operational (processing) phases are handled through program construction and testing. It is to be developed in a way that three users can access Admin, and Customer with different permissions. It is a solution to a "how to" approach compared to system analysis which is a "what is" orientation. It translates the system requirements into ways of making them operational. The design phase focuses on the detailed implementation of the system recommended in the feasibility study. 
+3.1 STRUCTURED DESIGN METHODOLOGIES 
+ Design methodology refers to the development of a system or method for a unique situation. Design methodology stresses the use of brainstorming to encourage innovative ideas and collaborative thinking to work through each proposed idea and arrive at the best solution. Meeting the needs and requirements of the end user is the most critical concern. To employ design methodology, various analyses and testing have been done so as to meet the desired user needs. Every input that the user input is being tested in this software. That means the validity of each data is being checked and if found invalid necessary warning and prompting messages are displayed. The output forms are also tested in detail to see whether the desired output is met or not. Also, the output forms are made clearer and more meaningful for the user to understand.  
+3.2 USER INTERFACE DESIGN 
+The Tourism Management System is designed with a simple and clean interface so that both customers and administrators can use it easily. The goal is to make the system user-friendly, attractive, and easy to navigate.
+Login Page: A secure page where users (customers or admins) can log in with their credentials.
+Home/Dashboard: Provides quick access to the main features like tour packages, bookings, and payments.
+Tour Packages Page: Displays different tour options with details like destination, price, duration, and pictures.
+Booking Page: A simple form where customers can enter their details, choose a package, and confirm bookings.
+Admin Panel: Allows the administrator to add or update tour packages, manage bookings, and generate reports.
+Search Option: Customers can search for tours based on budget, location, or type of trip.
+Responsive Layout: The design works well on desktops, tablets, and mobile devices.
+3.3 DATABASE DESIGN 
+ Database design is one of the most important parts of the system design phase. In a database environment common data are available and are used by several users. Instead of each program managing its own data, authorized users share data across application with the database software managing the data as an entity. The primary objective of a database design is fast response time to enquiries, more information at low cost, control of redundancy, clarity and ease of use, date and program independence, accuracy and integrity of the system, fast recovery and availability of powerful end-user languages. The theme behind a database is to handle information as an integrated whole thus the main objective is to make information as access easy, quick, inexpensive and flexible for the users. Data directory specifies the major element in the system, and care should be taken while designing, in order to avoid unnecessary duplication of data. The entire package depends on how the data are maintained in the system. Several tables are maintained in the system to store data that are required for the processing of various data as well as storing intermediate or final processed results. Database design mainly aims at handling large volumes of information, involving the definitions for the structure of storage and provisions for the manipulation of information, providing safety of information despite of system crashes due to unauthorized access. Some conditions are satisfied in database design stage. 
+3.3.1 DATA AND INTEGRITY CONSTRAINTS  
+The primary of a database design is fast response time to inquiries, more information at low cost, control of redundancy, clarity and ease of use, accuracy and integrity of the system, fast recovery and availability of powerful end-user languages. The theme behind a database is to handle information as an integrated whole thus the main objective is to make information as access easy, quick, inexpensive and flexible for the users. In this project, we mainly concentrated into relational databases. Relational database stores data in tables, which is turn, are composed of rows also known as records, columns also known as fields. The fields in the relational model are: -  
+Primary Key 
+ The key which is uniquely identify records. They also notify the not null constraints. Foreign Key The key which references the primary key, is the data inserted in the primary key column of the table.  
+Normalization  
+After the conceptual level, the next level of process of database design to organize the database structure into a good shape called Normalization. The normalization simplifies the entries, removing redundancies from the system data and finally builds a data structure, which is both flexible and adaptable to the system. The different normal forms obtained during the database design are given below:  
+ In the database design, we create a database with different tables that is used to store the data. We normalize the data in the table. Database normalization is the process of organizing the fields and tables in a relational database to minimize redundancy and dependency. Normalization usually involves dividing large tables into smaller (and less redundant) tables and defining relationships between them. The objective is to isolate data so that additions, deletions, and modifications of a field can be made in just one table and then propagated through the rest of the database via the defined relationships. 
+  In the project I have made used of the 3rd normal form, Third Normal Form (3NF) is a property of database tables. A relation is in third normal form if it is in Second Normal Form and there are no functional (transitive) dependencies between two (or more) nonprimary key attributes. The overall objective in the development of database technology has been to treat data as an organizational resource and as an integrated whole. Database Management System allows data to be protected and organized separately from other resources. Database is an integrated collection of data. This is the difference between logical and physical data. 
+3.4 OUTPUT DESIGN  
+The output design of the Tourism Management System is made to give users clear and useful information in a simple way. It shows the results of the actions done in the system, like bookings or payments, so that both customers and admins can easily understand them.
+Booking Confirmation: After a customer books a tour, the system shows a confirmation page with details like name, package, date, price, and booking ID.
+Reports for Admin: The admin can view reports such as total bookings, customer lists, tour details, and income reports. These help in managing the business.
+Tour Package Display: Customers can see details of each tour package, including price, duration, facilities, and schedule.
+Payment Receipt: After payment, the system gives a receipt with all the transaction details.
+Search Results: When users search for tours, the system displays results based on their preferences like budget, destination, or type of trip.
+3.5 TABLE DESIGN 
+Table overview 
+Database name: rad.io 
+Table name  Table description 
+  Admin Stores password for admin 
+ Store  Stores game details for the store Users Stores customer details genre 	 Used to  identify genres of each games Cart Contain cart details of every users 
+ Library  Contains details of games bought by users   
+Figure 3.1 table overview 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table no:1 Table name: admin   table description: Stores password for admin 
+password [int]  Last_updated [timestamp]  Security_key [int] Primary key Figure 3.2 admin table 
+Table no:2 
+Table name: store 
+Table description:  stores game details for store 
+gid [int] 
+ Primary key game [text]  
+ Icon  
+[text]  Price 
+ [int] 
+  Ram 
+ [int]  Cpu 
+ [int]  Hdd 
+ [int]  Publisher 
+ [varchar(30)]  Video 
+ [varchar(50)]  Description 
+ [text]  Figure 3.3.store table 
+ 
+Table no:3 
+Table name: users 
+Table description: stores user details 
+Uid 
+ [int] Primary key User 
+ [varchar(40)]  Pass 
+ [varchar(40)]  Email 
+ [varchar(70)]  Doj 
+ date  Ram 
+ int  Cpu 
+ int  Hdd 
+ int  Figure 3.4. users table 
+ 	 
+ 
+Table no:4 
+Table name: genre 
+Table description: store genre of each games available in store 
+Gid 
+ [int] [primary key] Racing 
+ [int] [primary key] shooter 
+ [int] [primary key] Action_ 
+ [int] [primary key] Open_world 
+ [int] [primary key] Adventure 
+ [int] [primary key] Fpp 
+ [int] [primary key] Tpp 
+ [int] [primary key] Figure 3.5  genre table 
+Table no:5 
+Table name: cart 
+Table description: stores cart details for users 
+Uid 
+ [int] [primary key] Gid 
+ [int] [primary key] Game 
+ [varchar(50)]  Icon 
+ [varchar(70)]  Price int  Figure 3.6. cart table 
+Table  no:6 
+Table name: library 
+Table description: stores games purchased by users 
+Uid 
+ [int] [primary key] Gid 
+ [int] [primary key] Game 
+ [Varchar(50)]  Icon [varchar(70)]  price int  date timestamp  refund int  Figure 3.7.library table 
+4.CODING 
+ 4.1.PROGRAM CODE PREPARATION 
+ When considered as a step-in software engineering, coding is viewed as a natural consequence of design. However, programming language characteristics and coding style can profoundly affect software quality and maintainability. The coding step translates a detail design representation into a programming language realization. The translation process continues when a compiler accepts source code as input and produces machine-independent object code as output. The initial translation step in detail design to programming language is a primary concern in the software engineering context. Improper interpretation of a detail design specification can lead to erroneous source code. Style is an important attribute of source code and can determine the intelligibility of a program. The elements of a style include internal documentation, methods for data declaration, procedures for statement construction, and I/O coding and declaration. In all cases, simplicity and clarity are key characteristics. An offshoot of coding style is the execution time and/or memory efficiency that is achieved. Coding is the phase in which we actually write programs using a programming language. In the coding phase, design must be translated into a machinereadable form. If design is performed in a detailed manner, coding can be accomplished mechanistically. It was the only recognized development phase in early or unsystematic development processes, but it is just one of several phases in a waterfall process. The output of this phase is an implemented and tested collection of modules. 
+ 	 In my project I have made use of the PHP to code the whole project and have made use of 
+MySQL to act as a database to store the results of the processed data which is the output of the project. 
+4.2. IMPLEMENTATION OF SECURITY 
+ The software quality assurance is comprised of a variety of tasks associated with five major activities. i. i.	Application of technical methods 
+ii. Conduct of formal technical reviews.  
+iii. Software testing 
+iv. Enforcement of standard.  
+	v. 	Record keeping and recording.  
+The quality begins with a set of technical methods and tools that help the analyst to achieve high quality specification and the designer to develop high quality design. The next activity involves assessment for quality for the design that is created which is the formal technical review. Software testing combines a multi-step strategy with a series of test case design methods that help to ensure effective error detection. To enforce data integrity, you can constrain or restrict the data values that users can insert, delete, or update in the database. Recordkeeping refers to the entire range of functions involved in creating and managing records throughout their life cycle. It includes: creating / capturing adequate records. maintaining them in trustworthy recordkeeping systems for defined retention periods. 
+4.2.1 DATA SECURITY 
+ The software maintains a well-organized database for storing the details that are provided by the user. This helps us to eliminate the entering of invalid data. Data is not accessible to unauthorized users. The system analyst will provide the test data, specially designed to show that the system will operate successfully in all its aspects and produce expected results under expected conditions. Preparation of test data and the checking of results should be carried out in conjunction with the appropriate users and operational departments. Also, the extent to which the system should be tested must be planned. 
+4.2.2. USER AND ACCESS RIGHTS  
+The Tourism Management System gives different rights to different users:
+Admin: Full control. Can add or update tour packages, manage bookings, handle payments, and generate reports.
+Customer: Can register, view packages, make or cancel bookings, make payments, and see booking history.
+5. SYSTEM TESTING  
+System testing is the stage of implementation highly aimed at ensuring that the system works accurately and efficiently before the live operation commences. Testing is vital to the success of the system. The primary objective of testing is to derive a set of tests that has the highest likelihood for uncovering defects in then software. The system test in implementation should conform that all is correct and an opportunity to show the users that the system works as expected. It accounts the largest percentage of technical effort in the software development process. Testing phase in the development cycle validates the code against the functional specification.There are mainly two approaches of testing namely, functional testing and structural testing. Functional testing is based on the functionality of the program and not the structure of the program. The test cases are solely on the basis of specification or requirements of the program. This type of testing is also called as black box testing. Structural testing is also called as white box testing or glass box testing. Here the internal structure of the program is tested. Test cases are designed by examining the logic of the program. "tourism management system" focuses on the functionality of the system and hence it mainly does the functional/black box testing. The test cases of this system are completely based on the specifications of the system. The application was tested and found to be working as expected. There was no abnormal behaviour reported during the testing of the program. Testing is a method by which we try reducing the testing efforts and bringing out the maximum output. Testing helps us in knowing whether the logical assumptions that we have taken for the system are correct, and if they are correct, we have obtained our goal. We test the system to know the errors, to check the validity of the information, to also group the modules with the aim that we meet the system requirements according to the system needs. Testing is vital to the success of the system. System testing makes logical assumption that if all the parts of the system are correct, we have achieved the mission successfully. System testing is the stage of implementation that is aimed at assuring that the system works accurately and efficiently before the live operation commences. 
+Testing includes several levels of testing. They are: 
+1. Unit Testing 
+2. Integration Testing 
+3. System Testing  
+4. Acceptance Testing 
+ a) Client-Side Validation 
+ Client-side validation is something that will happen on users' browser. The validation will occur before the data gets posted back to server. It is a good idea to have client-side validation as the user gets to know what needs to be changed immediately, i.e., no trips to servers are made. JavaScript is most widely used to perform client-side validation.  
+b) Server-Side Validation 
+ Server-side validation occurs at server. The benefit of having server-side validation is that if the user somehow bypasses the client-side validation (accidentally or deliberately), then we can catch the problem on the server side. So, having server side validation provides more security and ensures that no invalid data gets processed by the application. Server-side validation is done by writing our custom logic for validating all the input.  
+The different types of testing are as follows:  
+1. Unit Testing 
+2. Integration Testing  
+3. User Acceptance Testing  
+4. System Testing 
+ 
+ 
+ Unit testing is the first level of testing. In this process the code produced during the coding phase is verified. The goal is to test the internal logic of the modules. Each unit was found to be working satisfactorily. This testing is carried out during the programming stage itself. In this testing step, each module is found to be working satisfactorily as regards to the expected output from the module. Using a method called white box testing in which the software tester has knowledge of the inner workings, structure and language of the software, or at least its purpose and where each module or component of the software is tested individually. In the unit test case, we will be testing the separate modules of the Software. We will test the components by passing data through it and we will be monitoring data to find the errors. We will be looking for entry and exitconditions of the data. We will make sure that all the components work without any troubles. 
+Function  
+Tested  Test Condition  Expected  
+Results  Actual Results  Status  Username  and  
+Password  Invalid  
+Username  and  
+Password  Access Denied  Access Denied  Pass  Logout Function  Invalid  
+Infiltration 
+ 	with wrong 
+credentials  Access Denied  
+  
+ Access Denied  Pass  
+
+5.2 Integration testing
+Integration testing was done to make sure all modules of the Tourism Management System work together correctly. Features like login, booking, payments, and report generation were first tested individually and then combined. The focus was on checking how data flows between modules, such as when a customer books a tour and the information is passed to payment and then to reports. The testing showed that the modules integrated smoothly, and the system worked without errors.
+5.3 USER ACCEPTANCE TESTING
+User Acceptance Testing was done to check if the Tourism Management System meets the needs of both customers and administrators. Real users tested features like booking tours, making payments, and viewing reports. The system worked as expected, was easy to use, and produced correct results. Based on the testing, the system was accepted as ready for use.
+This was done regard to the following point:        
+1) Input screen design        
+2) Output screen design      
+5.4 Test Case Design      
+Test case design refers to how you set-up your test-cases. It is important that your tests are designed well, or you could fail to identify bugs and defects in your software during testing. Designing good test cases ensure that every aspect of your software gets tested so that you can find and fix any issues.      
+     
+Function  
+Tested  
+  Test Condition  Expected  
+Result  Actual Result  Status  Name  Entered  	  	non characters   Not allowed  Not allowed  Pass   email Entered 	 	invalid email format  Not allowed  Not allowed  Pass  Login  Invalid 
+ 	username  	or password Not allowed  
+ Not allowed  Pass  Uname  Entered invalid  Not allowed  Not allowed  Pass  Figure 5.2 figure for test  case design 
+ 
+ 
+5.5 Test Report and Debugging      
+Testing means verifying correct behaviour. Testing can be done at all stages of module development: requirements analysis, interface design, algorithm design, implementation, and integration with other modules. In the following, attention will be directed at implementation testing. Implementation testing is not restricted to execution testing. An implementation can also be tested using correctness proofs, code tracing, and peer reviews, as described below.       
+•Debugging is a cyclic activity involving execution testing and code correction. The testing that is done during debugging has a different aim than final module testing. Final module testing aims to demonstrate correctness, whereas testing during debugging is primarily aimed at locating errors.  This difference has a significant effect on the choice of testing strategies.        
+•Report error conditions immediately - Much debugging time is spent zeroing in on the cause of errors. The earlier an error is detected, the easier it is to find the cause. If an incorrect module state is detected as soon as it arises then the cause can often be determined with minimal effort. If it is not detected until the symptoms appear in the client interface then may be difficult to narrow down the list of possible causes.      
+•Maximize useful information and ease of interpretation - It is obvious that maximizing useful information is desirable, and that it should be easy to interpret. Ease of interpretation is important in data structures. Some module errors cannot easily be detected by adding code checks because they depend on the entire structure. Thus, it is important to be able to display the structure in a form that can be easily scanned for correctness.      
+•Minimize useless and distracting information - Too much information can be as much of a handicap as too little. If you have to work with a printout that shows entry and exit from every procedure in a module then you will find it very difficult to find the first place where something went wrong. Ideally, module execution state reports should be issued only when an error has occurred. As a general rule, debugging information that says "the problem is here" should be preferred in favour of reports that say "the problem is not here".      
+•Avoid complex one-use testing code - One reason why it is counterproductive to add module correctness checks for errors that involve the entire structure is that the code to do so can be quite complex. It is very discouraging to spend several hours debugging a problem, only to find that the error was in the debugging code, not the module under test. Complex testing code is only practical if the difficult parts of the code are reusable.     
+6. SYSTEM IMPLEMENTATION AND MAINTENANCE        
+Implementation is an activity that is contained throughout the development phase. It is the process of bringing a developed system into operational use and turning it over to the user. The new system and its components are to be tested in a structured and planned manner. A successful system should be delivered and users should have the confidence that the system would work efficiently and effectively. The more complex the system being implemented the more involved will be the system analysis and design effort required for implementation. Implementation is the stage of the system when the theoretical design is turned into working system. The implementation involves careful planning investigation of the current system and its constraints on implementing, design of methods to achieve the changeover, training of user over procedure and evaluation change over method.       
+There are three types of implementations:        
+      
+1.Implementation of a computer system to replace a manual system. The problems involved are converting files, training users, creating accurate files, and verifying printouts for integrity.      
+      
+2.Implementation of a new computer system to replace an existing one. This is usually a difficult conversion. If not properly planned, there can be many problems. Some larger systems have taken as long as a year to convert.      
+      
+3.Implementation of a modified application to replace an existing one using the same computer.  This type of conversion is relatively easy to handle, provided there are no major changes in files 
+7. SCOPE OF PROJECT
+The Tourism Management System is developed to make the process of planning and managing tours easier for both customers and administrators. For customers, the system provides a convenient platform where they can view available tour packages, check details such as price, duration, and facilities, and make bookings or cancellations online. It also allows them to make secure payments and receive booking confirmations and receipts instantly. This saves customers time and effort, as they do not need to visit a travel agency in person. For administrators and staff, the system helps manage tour packages, customer records, payments, and bookings in an organized way. It also supports generating reports on sales, customer preferences, and revenue, which can be used for decision-making and improving business strategies.The project can be applied in travel agencies, tourism companies, and even hotel chains that provide tour services. Since it is online, customers can access it anytime and from anywhere, making tourism services more accessible. In the long run, the system reduces paperwork, avoids booking errors, improves customer satisfaction, and increases efficiency for the organization.
+8. FUTURE ENHANCEMENTS 
+The Tourism Management System already makes booking and managing tours easier, but it can be improved further in the future. Some possible enhancements include creating a mobile app so customers can book tours on their phones, adding live chat support for quick help, and providing multi-language options to serve international users. The system can also be linked with Google Maps to show travel routes and nearby attractions, and a review and rating feature can be added so customers can share their experiences. With these improvements, the system will become more advanced, user-friendly, and helpful for both customers and travel agencies.
+9.CONCLUSION  
+The Tourism Management System was developed to simplify and improve the way tourism services are managed. By using the right tools and technologies, the system provides a user-friendly platform for customers to view packages, make bookings, and complete payments online. For administrators, it helps in managing packages, handling customer records, and generating reports efficiently.
+This project shows how technology can reduce manual work, minimize errors, and improve customer satisfaction in the tourism industry. With further enhancements, such as mobile apps and live support, the system can become even more powerful and reach a wider audience.
+10. BIBLIOGRAPHY        
+    www.beginwebprogramming.com     
+www.stackoverflow.com
+  www.w3schools.com     
+ www.tutorialspoint.com 
+ 
+ 
+ 
+ 
+ 
+ 
+APPENDIX-I 
+index.php 
+<?php 
+session_start(); session_destroy(); session_start(); echo "<script>span=document.getElementById('error');</script>"; if(isset($_POST['dl'])) 
+{ 	$i=$_POST['i']; 
+ 	require 'connections.php'; 
+ 	$conn->multi_query("delete from cart where uid='$i';delete from library where uid='$i';delete from users where 
+ 	 	uid='$i'"); 
+ 	echo "<script>alert('your account has been deleted permanently')</script>"; 
+ 	 
+ 
+} 
+?> 
+<!DOCTYPE html> 
+<html>  
+<head> 
+ 	<meta charset="utf-8"> 
+ 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+ 	<title>login</title> 
+ 
+</head> 
+<body  onload="s()"> 
+ 	 
+ 	<div class="wrapper"> 
+ 	<div class="box"> 
+ 	 	<div class="logo"></div> 
+ 	<form method="POST" action="index.php"> 
+ 	 	<img src="t1.png" class="title-lg"><br> 
+ 	 	<label for="un">username:</label> 
+ 	 	<input type="text"  name="un" style="height: 20px;" required><br> 
+ 	 	 
+ 	 	<label for="pw">password:</label> 
+ 	 	<input type="password"  name="pw" style="height: 20px" required> 
+ 	 	</h2><br> 
+ 	 	<?php 
+ 	 	if(isset($_POST['submit'])) 
+{ 
+ 	require 'connections.php'; 
+ 	 
+$u=$_POST['un']; 
+$p=md5($_POST['pw']); 
+$result=$conn->query("select uid,user,pass,ram,cpu,hdd from users where user='$u'"); if(mysqli_num_rows($result)==0) 
+{ 
+ 	echo "<span class='user'>unknown username</span>"; 
+ 	goto skip; 
+} 
+$row=mysqli_fetch_array($result); 
+if($row[2]!=$p) 
+{ 
+ 	echo "<span class='password'>wrong password</span>"; 
+ 	 
+} else 
+{ 
+$_SESSION['u']=$u; 
+$_SESSION['i']=$row[0]; 
+$_SESSION['ram']=$row[3]; 
+$_SESSION['cpu']=$row[4]; 
+$_SESSION['hdd']=$row[5]; 
+ 
+header("location:home.php"); 
+}} skip: 
+?><br> 
+ 	 	<input type="submit" value="LOGIN" name="submit"><br> 	 
+ 	 	are you new here? 
+ 	 	<a href="registration.php">signup</a><br> 
+ 	</form> 
+</div> 
+<form action="adminpass.html"><input type="submit" title="ADMIN CONTROLS" class="admin" value=" 
+"></form> 
+</div></body> 
+</html> 
+ 
+ 
+Store.php 
+<?php 
+session_start(); 
+$iui=$_SESSION['i']; 
+?> 
+<html> 
+ 
+<head> 
+ 
+ 	<script type="text/javascript"> 
+ 
+ 
+ 	 	function at(a) 
+ 	 	{ 
+ 	 	 	var xmlhttp=new XMLHttpRequest();  	 	 	xmlhttp.onreadystatechange=function()  
+ 	 	 	{ 
+ 	 	 	 	if(this.readyState==4 && this.status==200) 
+ 	 	 	 	{ 
+ 	 	 	 	 	document.getElementById(a).value='added to cart';  	 	 	 	 	document.getElementById(a).disabled=true;  	 	 	 	 	document.getElementById(a).classList.remove('addcart'); 
+ 	 	 	 
+ 	document.getElementById('cartbutton').innerHTML=this.responseText; 
+ 	 	 	 	 	document.getElementById(a).classList.add('justadded'); 
+ 	 	 	 	} 
+	 	}; 
+	 	xmlhttp.open("GET","cartajax.php?a="+a,true); 
+ 	 	 	xmlhttp.send(); 
+ 	 	}  	 	 	 
+ 	 	function showhint(x){ 
+ 	 	 	 
+ 	 	var xmlhttp=new XMLHttpRequest();  	 	xmlhttp.onreadystatechange= function()  
+ 	 	{ 
+ 	 	if (this.readyState==4 && this.status==200) 
+ 	 	{ 
+ 
+        document.getElementById("searchhint").innerHTML=this.responseText; 
+         
+ 
+       	} 
+ 	 	}; 
+ 	 	xmlhttp.open("GET","searchhint.php?x="+x);        	xmlhttp.send(); 
+ 
+ 	} 
+ 	</script> 
+ 	<meta charset="utf-8"> 
+ 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+ 	<title>store</title> 	 
+</head> 
+<body> 
+<div class='genres'> 
+ 	<form method='POST' action='store.php' > 
+ 	 	<input type='hidden' value='none' name='flt'> 
+ 	 	<input type='submit' name='apply' value='all' id='all' class='nav-left'> 
+ 	</form> 
+ 	<form method='POST' action='store.php'> 
+ 	 	<input type='hidden' value='action_' name='flt'> 
+ 	 	<input type='submit' name='apply' value='action' id='action' class='nav'> 
+ 	</form> 
+ 	<form method='POST' action='store.php'> 
+ 	 	<input type='hidden' value='adventure' name='flt'> 
+ 	 	<input type='submit' name='apply' value='adventure' id='adventure' class='nav'> 
+ 	</form> 
+ 	<form method='POST' action='store.php'> 
+ 	 	<input type='hidden' value='open_world' name='flt'> 
+ 	 	<input type='submit' name='apply' value='openworld' id='openworld' class='nav'> 
+ 	</form> 
+ 	<form method='POST' action='store.php'> 
+ 	 	<input type='hidden' value='shooter' name='flt'> 
+ 	 	<input type='submit' name='apply' value='shooter' id='shooter' class='nav'> 
+ 	</form> 
+ 	<form method='POST' action='store.php'> 
+ 	 	<input type='hidden' value='racing' name='flt'> 
+ 	 	<input type='submit' name='apply' value='racing' id='racing' class='nav'> 
+ 	</form> 
+ 	<form method='POST' action='store.php'> 
+<input type='hidden' value='fpp' name='flt'> 
+<input type='submit' name='apply' value='fpp' id='fpp' class='nav'> 
+ 	</form> 
+ 	<form method='POST' action='store.php'> 
+ 	 	<input type='hidden' value='tpp' name='flt'> 
+ 	 	<input type='submit' name='apply' value='tpp' id='tpp' class='nav-right'> 
+ 	</form> 
+ 
+</div> 
+ 
+<?php 
+ 	require "connections.php";  	if(isset($_POST['acart'])) { 	$id=$_POST['gid']; 
+ 	$game=$_POST['game']; 
+ 	$icon=$_POST['icon']; 
+ 	$price=$_POST['price']; 
+ 	 
+ 	$conn->query("insert 	into cart(uid,gid,game,icon,price)values('$iui','$id','$game','$icon','$price')"); 
+ 	hello: 
+} 
+ 	$cart=mysqli_fetch_array($conn->query("select count(*) from cart where uid='$iui'")); 
+ 	$count=$cart[0];  	if($count==0) 
+ 	{ 
+ 	 	$count=''; 
+} if(isset($_POST['apply'])) 
+ 	{ 	$dim=$_POST['apply']; 
+ 	 	echo 
+"<script>document.getElementById('$dim').style.backgroundColor='black';document.getElementById('$di m').style.color='white';</script>"; 
+ 	 	$f=$_POST['flt'];  	 	if($f!='none') 
+ 	 	{ 
+ 	 	$result=$conn->query("select 
+store.gid,game,icon,price,ram,cpu,hdd,publisher,video,description 	from 	store,genre 	where 
+store.gid=genre.gid and $f=1 order by rand()"); 
+ 	 	goto nxt; 	 
+ 	 	} 
+ 	} 
+ 	if(isset($_POST['sr'])) 
+ 	{ 
+ 	 	$f=$_POST['sr']; 
+ 	 	$result=$conn->query("select 
+store.gid,game,icon,price,ram,cpu,hdd,publisher,video,description 	from 	store,genre 	where 
+store.gid=genre.gid and game like '%{$f}%' order by rand()"); 
+ 	 	goto nxt; 	 
+ 	 	 
+ 	} 
+ 	$result=$conn->query("select * from store order by rand()"); 
+ 	nxt: 
+ 
+ 	if(mysqli_num_rows($result)>0) 
+ 	{ 	echo "<div class='heading'>STORE</div><h2>"; 
+echo "<div class='line'>"; 
+	 	echo 	"<div 	class='searchbox' 	style='none'><form 	method='post' 
+action='store.php'><input type='text' class='searcher' autocomplete='off' name='sr'  placeholder='search store' onkeyup='showhint(this.value)'> "; 
+ 	 	 	echo "</form><div class='searchhint' id='searchhint'></div></div>";  
+ 	 	 	 
+   echo  "<form method='post' action='cart.php'><button type='submit' class='cart' title='CART' id='cartbutton'><sup>$count</sup></button></form></div><br>"; 
+ 
+ 	if(isset($_POST['apply'])) 
+ 	{ 
+ 	 	$f=$_POST['flt']; 
+ 	 	$f=str_replace('_',' ',$f); 
+ 	 	if($f!='none') 
+ 	 	{ 
+ 	 	 	echo "<h1><u>$f</u></h1>"; 	 
+ 	 	} 
+ 	} 
+ 	if(isset($_POST['sr'])) 
+ 	{$sh=$_POST['sr']; 
+echo "search results for '$sh'  :<br>"; 
+} 
+ 	echo "<div class='wrapper'>";  	 	while ($row=mysqli_fetch_array($result)) 
+ 	 	{ 	 
+ 	 	 	echo "<form method='post' action='lookout.php' enctype='multipart/formdata'>"; 
+	 	echo "<div class='game'><label for='$row[1]'><span>₹$row[3]</span><img 
+src='images/$row[2]'></label><br>"; 
+ 	 	 	echo "<input type='hidden' value='$row[0]' name='gid'>";  	 	 	echo "<input type='hidden' value='$row[1]' name='game'>";  	 	 	echo "<input type='hidden' value='$row[2]' name='icon'>";  	 	 	echo "<input type='hidden' value='$row[3]' name='price'>";  	 	 	echo "<input type='hidden' value='$row[4]' name='ram'>";  	 	 	echo "<input type='hidden' value='$row[5]' name='cpu'>";  	 	 	echo "<input type='hidden' value='$row[6]' name='hdd'>";  	 	 	echo "<input type='hidden' value='$row[7]' name='publisher'>";  	 	 	echo "<input type='hidden' value='$row[8]' name='video'>";  	 	 	echo "<input type='hidden' value='$row[9]' name='des'>";  	 	 	echo "<input type='submit' id='$row[1]' value='$row[1]' name='sub'>"; 
+ 	 	 	echo "</form><form>"; 
+ 	 	 	echo "<input type='hidden' value='$row[0]' name='gid'>";  	 	 	echo "<input type='hidden' value='$row[1]' name='game'>";  	 	 	echo "<input type='hidden' value='$row[2]' name='icon'>";  	 	 	echo "<input type='hidden' value='$row[3]' name='price'>"; 
+   $libsearch=mysqli_fetch_array($conn->query("select * from library where uid=$iui and gid='$row[0]'")); 
+ 	 	 	$cartsearch=mysqli_fetch_array($conn->query("select * from cart where uid='$iui' and gid='$row[0]'")); 
+ 	 	 	$flag=0; 
+ 	 	 	if($libsearch) 
+ 	 	 	{ 	$flag=1; 
+ 	 	 	 	echo 	"<input 	type='submit' 	value='in-library' 	class='addcartlib' disabled='disabled' style='cursor:not-allowed'>"; 
+ 	 	 	 
+} 
+	 	if($cartsearch) 
+ 	 	 	{ 	$flag=1; 
+   echo "<input type='submit'  value='in-cart' class='addcartlib' disabled='disabled'  style='cursor:not-allowed'>"; 
+ 	 	 	 
+ 
+ 	 	 	} 
+ 	 	 	if($flag===0) 
+ 	 	 	{ 
+   echo "<input id=$row[0] onclick='at($row[0])' type='button' value='add to cart' class='addcart' name='acart' >"; 
+ 	 	 	} 
+ 	 	 	echo "</form></div>"; 
+ 	 	} 
+ 
+ 	} 
+ 	else 
+ 	{ 	 
+ 	 	if(isset($_POST['sr']))  	 	{ 	$f=$_POST['sr']; 
+ 	 	echo "<h2><br><br>0 games found for ''$f''</h2>";  	 	echo "<form action='store.php'>";  	 	echo 	"<input 	type='submit' 	value='refresh 	store' 	style='backgroundcolor:skyblue;border:solid;color:black'></form>"; 
+ 	 	} 
+ 	 	else 
+ 	 	{ 
+ 
+ 	 	die('<h2><br><br>no games available in store</h2>'); 
+ 	} 
+ 	} 
+ 
+?> 
+</body> 
+</html> 
+Registration.php 
+<?php 
+ 	 	require("connections.php");  	 	if(isset($_POST['submit'])) 
+ 	 	{ 	$e=1; 
+ 	 	 	$u=$_POST['un']; 
+ 	 	 	$p=md5($_POST['pw']); 
+ 	 	 	$e=$_POST['em']; 
+ 	 	 	$result=$conn->query("select * from users");  	 	 	while($row=mysqli_fetch_array($result)) 
+ 	 	 	{ 
+ 	 	 	 	if($u==$row[1]) 
+ 	 	 	 	{ 
+ 	 	 	 	 	echo "<script>alert('username already exists')</script>"; 
+ 	 	 	 	 	$e=0; 
+ 	 	 	 	} 
+ 	 	 	} 
+ 	 	 	if($e){ 
+	 	$conn->query("insert 	into 	users(user,pass,email,doj) 
+values('$u','$p','$e',curdate())"); 
+ 	 	 	echo "<script>alert('sign up successfull')</script>"; 
+ 	 	 	} 
+ 	 	} 
+ 	 	 
+?> 
+<!DOCTYPE html> 
+<html> 
+<head> 
+ 	<meta charset="utf-8"> 
+ 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+ 	<title>login</title>  	<script type="text/javascript"> 
+ 	 	function check() 
+ 	 	{ 	a=document.getElementById('pw');  	 	b=document.getElementById('pw1'); 
+ 	 	 
+ 	 	 	if(a.value!=b.value) 
+ 	 	 	{ 
+ 	 	 	 	alert('passwords dont match'); 
+ 	 	 	} 
+ 	 	}; 
+ 	 	function show() {  	 	 	var x = document.getElementById("pw");  	 	 	y=document.getElementById('pw1'); 
+ 
+  if (x.type === "password") { 
+    x.type = "text";y.type = "text"; 
+  } else { 
+    x.type = "password"; y.type = "password"; 
+  } 
+ 	 	} 
+ 	</script> 
+</head> 
+<body > 
+ 
+ 	<div > 
+ 	<form method="POST" action="registration.php"><h2> 
+ 	 	<h1><u>SIGN-UP</u></h1> 
+ 	 	<h2></h2> 
+ 	 	<label for="un">enter username:</label> 
+ 	 	<input type="text" id="un" name="un" style="height: 20px;" required><br> 
+ 	 	<label for="un">enter email:</label> 
+ 	 	<input type="email" name="em" style="height: 20px;" required><br> 
+ 	 	 
+ 	 	<label for="pw">password:</label>  
+ 	 	<input type="password" id="pw" name="pw" style="height: 20px" required> 
+ 	 	<br><label><input type="checkbox" onclick="show()" style="width:30px;height: 
+20px;margin-top: 1%;">show pasword</label> 
+ 
+ 	 	<label for="pw1"><br>repeat password:</label> 
+  <input type="password" id="pw1" name="pw1" style="height: 20px" required  onchange="check()"> 
+</h2><br> 
+ 	 	<input type="submit" value="SIGN-UP" name="submit"><br></form> 
+  <form action="index.php"><input type="submit" value="LOGIN" name="submit"><br></form> 
+ 	 
+ 	 
+</div> 
+</body> 
+</html> 
+ 
+Gamestacker.php 
+<?php  require 'connections.php'; if(isset($_POST['sub'])) 
+{ 	 
+ 	$g=$_POST['game']; 
+ 	$filename=$_FILES['icon']['name']; 
+ 	$tmpname=$_FILES['icon']['tmp_name'];  	$folder="images/".$filename;  	move_uploaded_file($tmpname,$folder); 
+ 
+ 	$vid=$_FILES['video']['name']; 
+ 	$tmpvid=$_FILES['video']['tmp_name'];  	$vidfolder="videos/".$vid; 
+    move_uploaded_file($tmpvid,$vidfolder); 
+ 
+ 	$price=$_POST['price']; 
+ 	$ram=$_POST['ram']; 
+ 	$cpu=$_POST['cpu']; 
+ 	$hdd=$_POST['hdd']; 
+ 	$pub=$_POST['pub']; 
+ 	$des=$_POST['des']; 
+ 	$sql="insert 	into 	store(game,price,icon,ram,cpu,hdd,publisher,video,description) values('$g','$price','$filename','$ram','$cpu','$hdd','$pub','$vid','$des')"; 
+ 
+ 	if($conn->query($sql)!=true) 
+ 	{ 
+ 	 	echo "<script>alert('couldnt upload the game');</script>"; 
+ 	} 
+ 	else 
+ 	{ 
+ 	 	echo "<script> alert(' $g  added to the store');</script>"; 
+ 	}; 
+ 	$result=mysqli_fetch_array($conn->query("select gid from store where game='$g'")); 
+ 	$ide=$result[0];  	if(isset($_POST['rc'])) 
+ 	{ 
+ 	 	$rc=1; 
+ 	} 
+ 	else 
+ 	{ 
+ 	 	$rc=0; 
+ 	} 
+ 	if(isset($_POST['sh'])) 
+{ 
+ 	 	$sh=1; 
+ 	} 
+ 	else 
+ 	{ 
+ 	 	$sh=0; 
+ 	}if(isset($_POST['ac'])) 
+ 	{ 
+ 	 	$ac=1; 
+ 	} 
+ 	else 
+ 	{ 
+ 	 	$ac=0; 
+ 	} 
+ 	if(isset($_POST['op'])) 
+ 	{ 
+ 	 	$op=1; 
+ 	} 
+ 	else 
+ 	{ 
+ 	 	$op=0; 
+ 	} 
+ 	if(isset($_POST['ad'])) 
+ 	{ 
+ 	 	$ad=1; 
+ 	} 
+ 	else 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ { 
+	 	$ad=0; 
+} if(isset($_POST['fp'])) 
+{ 
+	 	$fp=1; 
+} else 
+{ 
+	 	$fp=0; 
+} if(isset($_POST['tp'])) 
+{ 
+	 	$tp=1; 
+} else 
+{ 
+	 	$tp=0; 
+	} 	 
+$conn->query("insert into genre values('$ide','$rc','$sh','$ac','$op','$ad','$fp','$tp')"); } 
+?> 
+<html> 
+<head> 
+ 
+ <meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> <title></title> 
+</head> 
+<body><div> 
+ 
+ 	<u><h1>ADD GAME TO STORE</h1></u> 
+<form  method="POST" action="gamestacker.php" enctype= "multipart/form-data"> 
+ 	<label>enter game name: 
+ 	<input type="text" name="game"  autocomplete="on"   ></label> 
+ 	<br><label>add game icon 
+ 	<input type="file" accept="image/*" name="icon"   autocomplete="on"></label> 
+ 	<br><label>add game video 
+ 	<input type="file" accept="video/*" name="video"   autocomplete="on"></label> 
+ 	<label> 
+ 	 	<br>enter game description:<br> 
+ 	 	<textarea name="des" rows="8" cols="40"  > 	</textarea> 
+ 	</label> 
+ 	<br>genre: 
+ 	<input type="checkbox" name="rc" checked>racing 
+ 	<input type="checkbox" name="sh" checked>shooter 
+ 	<input type="checkbox" name="ac" checked>action 
+ 	<input type="checkbox" name="op" checked>open world 
+ 	<input type="checkbox" name="ad" checked>adventure 
+ 	<br> 
+ 	<input type="checkbox" name="fp" checked>fpp 
+ 	<input type="checkbox" name="tp" checked>tpp 
+ 	<br><label>publisher:<input type="text" name="pub"    autocomplete="on"><br></label> 
+ 	<label>RAM: 
+<select name="ram"> 
+ 	 	<option value="2"> 
+ 	 	 	2 GB 
+ 	 	</option> 
+ 	 	<option value="4"> 
+ 	 	 	4 GB 
+ 	 	</option> 
+ 	 	<option value="8" selected> 
+ 	 	 	8 GB 
+ 	 	</option> 
+ 	 	<option value="16" > 
+ 	 	 	16 GB 
+ 	 	</option> 
+ 	</select></label><br> 
+ 	<label> 
+ 
+ 	CPU: 
+ 	<select name="cpu">  	 	<option value="3"> 
+ 	 	 	i3/ryzen 3  	 	</option> 
+ 	 	<option value="5" selected> 
+ 	 	 	i5/ryzen 5  	 	</option> 
+ 	</select></label><br> 
+ 	<label>hdd: 
+ 	<input type="number" name="hdd" ></label><br> 
+
+
+ 
+
+ 
+ADD GAMES TO STORE 
+ 
+ 
+ 
+
+ 
+
+ 
+SALES REPORT 
+
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+Online Video game store       	 	 	1 	 
+
+Online Video game store       	 	 	1 	 
+
+CHINMAYA COLLEGE OF ARTS,COMMERCE AND SCIENCE                            	    	 DEPARTMENT OF COMPUTER APPLICATION 
+
+CHINMAYA COLLEGE OF ARTS,COMMERCE AND SCIENCE                            	    	 DEPARTMENT OF COMPUTER APPLICATION 
+
+Online Video game store       	 	 	1 	 
+
+CHINMAYA COLLEGE OF ARTS,COMMERCE AND SCIENCE                            	    	 DEPARTMENT OF COMPUTER APPLICATION 
+
+Online Video game store       	 	 	50 	 
+ 
+
+Online Video game store       	 	 	50 	 
+ 
+
+CHINMAYA COLLEGE OF ARTS,COMMERCE AND SCIENCE                            	    	 DEPARTMENT OF COMPUTER APPLICATION 
+
+CHINMAYA COLLEGE OF ARTS,COMMERCE AND SCIENCE                            	    	 DEPARTMENT OF COMPUTER APPLICATION 
+
+	Online Video game store       	 	 	49 	 
+
+	CHINMAYA COLLEGE OF ARTS,COMMERCE AND SCIENCE                            	    	 DEPARTMENT OF COMPUTER APPLICATION 
+
