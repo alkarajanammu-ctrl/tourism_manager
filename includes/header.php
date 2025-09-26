@@ -1,26 +1,24 @@
-﻿<?php if($_SESSION['login'])
-{?>
+﻿<?php
+// ensure a session is active (safe if other files already started it)
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+// normalize login flag from either 'login' or 'alogin' to avoid undefined index notices
+$loginUser = '';
+if (isset($_SESSION['login']) && $_SESSION['login'] !== '') {
+    $loginUser = $_SESSION['login'];
+} elseif (isset($_SESSION['alogin']) && $_SESSION['alogin'] !== '') {
+    $loginUser = $_SESSION['alogin'];
+}
+// now use $loginUser below instead of direct $_SESSION access
+?>
+<?php if ($loginUser === '') { ?>
+<!-- not logged in: show Sign Up / Sign In -->
 <div class="top-header">
 	<div class="container">
 		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
-			<li class="hm"><a href="dashboard.php"><i class="fa fa-home"></i></a></li>
-			<li class="prnt"><a href="profile.php">My Profile</a></li>
-				<li class="prnt"><a href="change-password.php">Change Password</a></li>
-			<li class="prnt"><a href="tour-history.php">My Tour History</a></li>
-			<li class="prnt"><a href="issuetickets.php">Raised Tickets</a></li>
-		</ul>
-		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
-			<li class="tol">Welcome :</li>				
-			<li class="sig"><?php echo htmlentities($_SESSION['login']);?></li> 
-			<li class="sigi"><a href="logout.php" >/ Logout</a></li>
-        </ul>
-		<div class="clearfix"></div>
-	</div>
-</div><?php } else {?>
-<div class="top-header">
-	<div class="container">
-		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
-			<li class="hm"><a href="dashboard.php"><i class="fa fa-home"></i></a></li>
+			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
 				<li class="hm"><a href="admin/index.php">Admin Login</a></li>
 		</ul>
 		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
@@ -31,7 +29,26 @@
 		<div class="clearfix"></div>
 	</div>
 </div>
-<?php }?>
+<?php } else { ?>
+<!-- logged in: show username, logout, dashboard link, etc. -->
+<div class="top-header">
+	<div class="container">
+		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
+			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
+			<li class="prnt"><a href="profile.php">My Profile</a></li>
+				<li class="prnt"><a href="change-password.php">Change Password</a></li>
+			<li class="prnt"><a href="tour-history.php">My Tour History</a></li>
+			<li class="prnt"><a href="issuetickets.php">Raised Tickets</a></li>
+		</ul>
+		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
+			<li class="tol">Welcome :</li>				
+			<li class="sig"><?php echo htmlentities($loginUser);?></li> 
+			<li class="sigi"><a href="logout.php" >/ Logout</a></li>
+        </ul>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<?php } ?>
 <!--- /top-header ---->
 <!--- header ---->
 <div class="header">
@@ -67,13 +84,13 @@
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-1">
 						<ul class="nav navbar-nav">
-							<li><a href="dashboard.php">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="page.php?type=aboutus">About</a></li>
 								<li><a href="package-list.php">Tour Packages</a></li>
 								<li><a href="page.php?type=privacy">Privacy Policy</a></li>
 								<li><a href="page.php?type=terms">Terms of Use</a></li>
 								<li><a href="page.php?type=contact">Contact Us</a></li>
-								<?php if($_SESSION['login'])
+								<?php if($loginUser)
 {?>
 								<li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
 								<?php } else { ?>

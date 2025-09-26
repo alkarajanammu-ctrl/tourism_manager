@@ -1,155 +1,144 @@
 <?php
-// ...existing code...
-<?php
-session_start();
+// start session only if none active
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-include('includes/config.php');
+// include config once to avoid multiple-include warnings
+include_once('includes/config.php');
 ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>TMS - Login test</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <style>body{font-family:Arial,Helvetica,sans-serif;margin:24px}label{display:block;margin-top:8px}input{padding:6px;width:260px}button{margin-top:12px;padding:8px 12px}#out{white-space:pre-wrap;margin-top:16px;border:1px solid #ddd;padding:12px;background:#f9f9f9}</style>
+<title>TMS | Tourism Management System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="css/font-awesome.css" rel="stylesheet">
+<!-- Custom Theme files -->
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--animate-->
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script>
+	<script>
+		 new WOW().init();
+	</script>
+<!--//end-animate-->
 </head>
 <body>
-<h2>Admin login debug</h2>
-<p>Use this form to POST to <code>admin/index.php</code> and inspect the raw response and HTTP status.</p>
+<?php include('includes/header.php');?>
+<div class="banner">
+	<div class="container">
+		<!-- <h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;" style="color:#000 !important"> TMS - Tourism Management System</h1> -->
+	</div>
+</div>
 
-<form id="debugForm">
-    <label>Username
-        <input name="username" id="username" value="admin">
-    </label>
-    <label>Password
-        <input name="password" id="password" value="admin123" type="password">
-    </label>
-    <label>
-        <input type="checkbox" id="sendAsForm" checked> Send as normal form POST (application/x-www-form-urlencoded)
-    </label>
-    <div>
-        <button type="button" id="sendBtn">Send POST to admin/index.php</button>
-    </div>
-</form>
 
-<div id="out">Response will appear here...</div>
 
-<script>
-async function send() {
-    const out = document.getElementById('out');
-    out.textContent = 'Sending...';
-    const url = 'admin/index.php';
-    const uname = document.getElementById('username').value;
-    const pwd = document.getElementById('password').value;
-    const sendAsForm = document.getElementById('sendAsForm').checked;
 
-    try {
-        let resp;
-        if (sendAsForm) {
-            const form = new URLSearchParams();
-            form.append('username', uname);
-            form.append('password', pwd);
-            resp = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: form.toString(),
-                credentials: 'same-origin'
-            });
-        } else {
-            resp = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username: uname, password: pwd }),
-                credentials: 'same-origin'
-            });
-        }
 
-        const text = await resp.text();
-        out.textContent = 'HTTP ' + resp.status + ' ' + resp.statusText + '\n\n' + text;
-    } catch (err) {
-        out.textContent = 'Fetch error: ' + err;
-    }
-}
 
-document.getElementById('sendBtn').addEventListener('click', send);
-</script>
+<!---holiday---->
+<div class="container">
+	<div class="holiday">
+	
+
+
+
+	
+	<h3>Package List</h3>
+
+					
+<?php $sql = "SELECT * from tbltourpackages order by rand() limit 4";
+$query = $dbh->prepare($sql);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $result)
+{	?>
+			<div class="rom-btm">
+				<div class="col-md-3 room-left wow fadeInLeft animated" data-wow-delay=".5s">
+					<img src="admin/pacakgeimages/<?php echo htmlentities($result->PackageImage);?>" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-6 room-midle wow fadeInUp animated" data-wow-delay=".5s">
+					<h4>Package Name: <?php echo htmlentities($result->PackageName);?></h4>
+					<h6>Package Type : <?php echo htmlentities($result->PackageType);?></h6>
+					<p><b>Package Location :</b> <?php echo htmlentities($result->PackageLocation);?></p>
+					<p><b>Features</b> <?php echo htmlentities($result->PackageFetures);?></p>
+				</div>
+				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
+					<h5>USD <?php echo htmlentities($result->PackagePrice);?></h5>
+					<a href="package-details.php?pkgid=<?php echo htmlentities($result->PackageId);?>" class="view">Details</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+<?php }} ?>
+			
+		
+<div><a href="package-list.php" class="view">View More Packages</a></div>
+</div>
+			<div class="clearfix"></div>
+	</div>
+
+
+
+<!--- routes ---->
+<div class="routes">
+	<div class="container">
+		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
+			<div class="rou-left">
+				<a href="#"><i class="glyphicon glyphicon-list-alt"></i></a>
+			</div>
+			<div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
+				<h3>80000</h3>
+				<p>Enquiries</p>
+			</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="col-md-4 routes-left">
+			<div class="rou-left">
+				<a href="#"><i class="fa fa-user"></i></a>
+			</div>
+			<div class="rou-rgt">
+				<h3>1900</h3>
+				<p>Registered users</p>
+			</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
+			<div class="rou-left">
+				<a href="#"><i class="fa fa-ticket"></i></a>
+			</div>
+			<div class="rou-rgt">
+				<h3>7,00,00,000+</h3>
+				<p>Booking</p>
+			</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+<?php include('includes/footer.php');?>
+<!-- signup -->
+<?php include('includes/signup.php');?>			
+<!-- //signu -->
+<!-- signin -->
+<?php include('includes/signin.php');?>			
+<!-- //signin -->
+<!-- write us -->
+<?php include('includes/write-us.php');?>			
+<!-- //write us -->
 </body>
 </html>
-// filepath: c:\wamp64\www\alkarajan\Tourism-Management-System-PHP\tms\index.php
-// ...existing code...
-<?php
-session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-include('includes/config.php');
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>TMS - Login test</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <style>body{font-family:Arial,Helvetica,sans-serif;margin:24px}label{display:block;margin-top:8px}input{padding:6px;width:260px}button{margin-top:12px;padding:8px 12px}#out{white-space:pre-wrap;margin-top:16px;border:1px solid #ddd;padding:12px;background:#f9f9f9}</style>
-</head>
-<body>
-<h2>Admin login debug</h2>
-<p>Use this form to POST to <code>admin/index.php</code> and inspect the raw response and HTTP status.</p>
-
-<form id="debugForm">
-    <label>Username
-        <input name="username" id="username" value="admin">
-    </label>
-    <label>Password
-        <input name="password" id="password" value="admin123" type="password">
-    </label>
-    <label>
-        <input type="checkbox" id="sendAsForm" checked> Send as normal form POST (application/x-www-form-urlencoded)
-    </label>
-    <div>
-        <button type="button" id="sendBtn">Send POST to admin/index.php</button>
-    </div>
-</form>
-
-<div id="out">Response will appear here...</div>
-
-<script>
-async function send() {
-    const out = document.getElementById('out');
-    out.textContent = 'Sending...';
-    const url = 'admin/index.php';
-    const uname = document.getElementById('username').value;
-    const pwd = document.getElementById('password').value;
-    const sendAsForm = document.getElementById('sendAsForm').checked;
-
-    try {
-        let resp;
-        if (sendAsForm) {
-            const form = new URLSearchParams();
-            form.append('username', uname);
-            form.append('password', pwd);
-            resp = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: form.toString(),
-                credentials: 'same-origin'
-            });
-        } else {
-            resp = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username: uname, password: pwd }),
-                credentials: 'same-origin'
-            });
-        }
-
-        const text = await resp.text();
-        out.textContent = 'HTTP ' + resp.status + ' ' + resp.statusText + '\n\n' + text;
-    } catch (err) {
-        out.textContent = 'Fetch error: ' + err;
-    }
-}
-
-document.getElementById('sendBtn').addEventListener('click', send);
-</script>
-</body>
